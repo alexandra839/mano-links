@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <!-- WhatsApp / Social preview -->
+  <meta property="og:title"       content="Entrega Grátis em Restaurantes!" />
+  <meta property="og:description" content="0 taxa de entrega na App Mano. Válido até 30 de Abril." />
+  <meta property="og:image"       content="https://yourusername.github.io/mano-links/img/preview.jpg" />
+  <meta property="og:url"         content="https://yourusername.github.io/mano-links/free-delivery" />
+  <meta property="og:type"        content="website" />
+
+  <script>
+    var ua = navigator.userAgent.toLowerCase();
+    var isAndroid = /android/.test(ua);
+    var isIOS     = /iphone|ipad|ipod/.test(ua);
+
+    // 1. Try to open the app via deep link
+    window.location = "mano://shop_types/1/shops";
+
+    // 2. After 1.5s, if app not installed, go to store
+    setTimeout(function() {
+      if (isAndroid) {
+        window.location = "https://play.google.com/store/apps/details?id=co.eddress.mano";
+      } else if (isIOS) {
+        window.location = "https://apps.apple.com/app/id1545005589";
+      } else {
+        window.location = "https://shop.manoapp.com/pt";  // your website
+      }
+    }, 1500);
+  </script>
+</head>
+<body style="font-family:sans-serif;text-align:center;padding:40px;color:#555">
+  <p>A abrir a App Mano...</p>
+</body>
+</html>
